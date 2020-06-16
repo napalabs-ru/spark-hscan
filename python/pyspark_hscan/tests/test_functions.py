@@ -1,4 +1,5 @@
 import os
+import sys
 import pathlib
 import unittest
 import logging
@@ -18,8 +19,8 @@ class PySparkTest(unittest.TestCase):
 
     @classmethod
     def create_testing_pyspark_session(cls):
-        os.environ["PYSPARK_PYTHON"] = "/usr/bin/python3"
-        os.environ["PYSPARK_DRIVER_PYTHON"] = "/usr/bin/python3"
+        os.environ["PYSPARK_PYTHON"] = sys.executable
+        os.environ["PYSPARK_DRIVER_PYTHON"] = sys.executable
         jar_path = str(pathlib.Path(os.path.realpath(__file__)).parent) + '/spark-hscan-lib.jar'
         return (SparkSession.builder
                 .master('local')
