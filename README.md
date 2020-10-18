@@ -6,7 +6,7 @@ of regular expressions
 **WIP**
 
 ## Usage examples
-### SparkSql example
+### SparkSQL
 ```scala
 import ru.napalabs.spark.hscan.implicits._
 
@@ -17,7 +17,7 @@ select * from my_table
     where hlike(text_field, array("pattern.*", "[a-Z]+other"))"""
 )
 ```
-### Scala dsl example:
+### Scala DSL:
 ```scala
 import ru.napalabs.spark.hscan.functions._
 
